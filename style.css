@@ -2,8 +2,9 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins', Arial, sans-serif;
+    font-family:'Poppins',Arial,sans-serif;
 }
+
 
 html{
     scroll-behavior:smooth;
@@ -12,33 +13,34 @@ html{
 
 body{
     background:#fff8ef;
-    color:#3b2415;
+    color:#3b2115;
 }
 
 
-/* Header */
 
 header{
 
     position:fixed;
     top:0;
     width:100%;
+    padding:20px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 8%;
-    background:rgba(255,248,239,0.95);
+    background:rgba(255,248,239,.95);
     backdrop-filter:blur(10px);
     z-index:1000;
-    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
 
 }
 
 
-header h1{
 
+.logo{
+
+    font-size:28px;
+    font-weight:bold;
     color:#8b4513;
-    font-size:30px;
 
 }
 
@@ -47,7 +49,7 @@ header h1{
 nav a{
 
     text-decoration:none;
-    color:#3b2415;
+    color:#3b2115;
     margin-left:25px;
     font-weight:bold;
     transition:.3s;
@@ -55,34 +57,46 @@ nav a{
 }
 
 
+
 nav a:hover{
 
-    color:#c58b45;
+    color:#d4a574;
+
+}
+
+
+
+.menu-icon{
+
+    display:none;
+    font-size:30px;
+    cursor:pointer;
 
 }
 
 
 
 
-/* Hero */
 
 .hero{
 
-    height:100vh;
 
-    background:
-    linear-gradient(
-    rgba(0,0,0,0.45),
-    rgba(0,0,0,0.45)
-    ),
-    url("https://images.unsplash.com/photo-1555507036-ab1f4038808a")
-    center/cover;
+height:100vh;
+
+background:
+linear-gradient(
+rgba(0,0,0,.45),
+rgba(0,0,0,.45)
+),
+url("https://images.unsplash.com/photo-1555507036-ab1f4038808a")
+center/cover;
 
 
-    display:flex;
-    align-items:center;
-    padding:0 10%;
-    color:white;
+display:flex;
+align-items:center;
+padding:0 10%;
+color:white;
+
 
 }
 
@@ -90,17 +104,17 @@ nav a:hover{
 
 .hero-content{
 
-    max-width:700px;
-    animation:fadeIn 1.5s;
+max-width:700px;
+animation:show 1.5s;
 
 }
 
 
 
-.hero h2{
+.hero h1{
 
-    font-size:60px;
-    margin-bottom:20px;
+font-size:60px;
+line-height:1.2;
 
 }
 
@@ -108,63 +122,68 @@ nav a:hover{
 
 .hero p{
 
-    font-size:22px;
-    margin-bottom:30px;
+font-size:22px;
+margin:25px 0;
 
 }
 
 
 
 
-button{
+button,
+.second-btn{
 
-    background:#c58b45;
-    color:white;
-    border:none;
-    padding:15px 35px;
-    border-radius:50px;
-    font-size:18px;
-    cursor:pointer;
-    transition:.4s;
-
-}
-
-
-
-button:hover{
-
-    background:#8b4513;
-    transform:translateY(-5px);
+background:#d4a574;
+color:white;
+border:none;
+padding:15px 35px;
+border-radius:40px;
+font-size:17px;
+cursor:pointer;
+text-decoration:none;
+display:inline-block;
+margin:5px;
+transition:.4s;
 
 }
 
 
 
+button:hover,
+.second-btn:hover{
+
+background:#8b4513;
+transform:translateY(-5px);
+
+}
 
 
-/* Sections */
+
+
 
 section{
 
-    padding:100px 10%;
-    text-align:center;
+padding:90px 10%;
+text-align:center;
 
 }
+
 
 
 section h2{
 
-    font-size:40px;
-    margin-bottom:30px;
-    color:#8b4513;
+font-size:40px;
+margin-bottom:30px;
+color:#8b4513;
 
 }
+
 
 
 section p{
 
-    font-size:18px;
-    line-height:1.8;
+font-size:18px;
+line-height:1.7;
 
 }
 
@@ -172,93 +191,168 @@ section p{
 
 
 
-/* Cards */
+.stats{
 
-.cards{
-
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
-
-}
-
-
-
-.card{
-
-    background:white;
-    width:300px;
-    padding:35px;
-    border-radius:25px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.1);
-    transition:.4s;
+display:flex;
+justify-content:center;
+gap:50px;
+background:#3b2115;
+color:white;
 
 }
 
 
 
-.card:hover{
+.stats h3{
 
-    transform:translateY(-15px);
+font-size:40px;
+color:#d4a574;
 
 }
 
 
 
 
-/* Gallery */
+.products{
 
-.images{
-
-    display:flex;
-    justify-content:center;
-    gap:25px;
-    flex-wrap:wrap;
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
 
 }
 
 
 
-.images img{
+.product{
 
-    width:320px;
-    height:250px;
-    object-fit:cover;
-    border-radius:25px;
-    transition:.4s;
-
-}
-
-
-
-.images img:hover{
-
-    transform:scale(1.05);
+background:white;
+width:320px;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 15px 35px rgba(0,0,0,.1);
+padding-bottom:25px;
+transition:.4s;
 
 }
 
 
 
+.product:hover{
 
-/* Footer */
+transform:translateY(-15px);
+
+}
+
+
+
+.product img{
+
+width:100%;
+height:230px;
+object-fit:cover;
+
+}
+
+
+
+.product h3{
+
+margin:20px;
+
+}
+
+
+
+.product p{
+
+padding:0 20px;
+
+}
+
+
+
+
+.gallery{
+
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+
+}
+
+
+
+.gallery img{
+
+width:320px;
+height:250px;
+object-fit:cover;
+border-radius:25px;
+transition:.4s;
+
+}
+
+
+
+.gallery img:hover{
+
+transform:scale(1.05);
+
+}
+
+
+
+
+.review{
+
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+
+}
+
+
+
+
+.whatsapp{
+
+position:fixed;
+right:25px;
+bottom:25px;
+background:#25D366;
+color:white;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+cursor:pointer;
+z-index:999;
+
+}
+
+
+
+
 
 footer{
 
-    background:#3b2415;
-    color:white;
-    padding:30px;
-    text-align:center;
+background:#3b2115;
+color:white;
+padding:40px;
+text-align:center;
 
 }
 
 
 
 
-
-/* Animation */
-
-@keyframes fadeIn{
+@keyframes show{
 
 from{
 
@@ -266,7 +360,6 @@ opacity:0;
 transform:translateY(50px);
 
 }
-
 
 to{
 
@@ -281,38 +374,61 @@ transform:translateY(0);
 
 
 
-/* Mobile */
-
 @media(max-width:768px){
 
 
 header{
 
+padding:20px 5%;
+
+}
+
+
+.menu-icon{
+
+display:block;
+
+}
+
+
+
+nav{
+
+display:none;
+position:absolute;
+top:80px;
+left:0;
+width:100%;
+background:#fff8ef;
+padding:20px;
+
+}
+
+
+
+nav.active{
+
+display:flex;
 flex-direction:column;
 
 }
 
 
-nav{
-
-margin-top:15px;
-
-}
-
 
 nav a{
 
-margin:10px;
+margin:15px;
 
 }
 
 
 
-.hero h2{
+.hero h1{
 
 font-size:40px;
 
 }
+
 
 
 .hero p{
@@ -323,4 +439,37 @@ font-size:18px;
 
 
 
-  }
+.stats{
+
+flex-direction:column;
+gap:20px;
+
+}
+
+
+
+.products{
+
+flex-direction:column;
+align-items:center;
+
+}
+
+
+
+.product{
+
+width:90%;
+
+}
+
+
+
+.gallery img{
+
+width:90%;
+
+}
+
+
+}
