@@ -1,23 +1,23 @@
-// Magna Pastries Final Website Script
+// Magna Pastries V3 Website Script
 
 
-// WhatsApp Order System
+// WhatsApp Order
 
 function orderNow(){
 
-    let phone = "251988678989";
+    const phone = "251988678989";
 
-    let message = 
-    "Hello Magna Pastries! I would like to order cakes, pastries or desserts.";
+    const message =
+    "Hello Magna Pastries! I would like to place an order.";
 
-    let link =
-    "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+    const whatsapp =
+    "https://wa.me/" + phone +
+    "?text=" + encodeURIComponent(message);
 
 
-    window.open(link, "_blank");
+    window.open(whatsapp, "_blank");
 
 }
-
 
 
 
@@ -26,7 +26,7 @@ function orderNow(){
 
 function toggleMenu(){
 
-    let nav = document.getElementById("nav");
+    const nav = document.getElementById("nav");
 
     nav.classList.toggle("active");
 
@@ -36,20 +36,16 @@ function toggleMenu(){
 
 
 
-// Close menu after selecting a page
+// Close mobile menu after selecting a section
 
-document.querySelectorAll("nav a").forEach(item=>{
+document.querySelectorAll("nav a").forEach(link=>{
 
-
-    item.addEventListener("click",()=>{
-
+    link.addEventListener("click",()=>{
 
         document.getElementById("nav")
         .classList.remove("active");
 
-
     });
-
 
 });
 
@@ -59,21 +55,21 @@ document.querySelectorAll("nav a").forEach(item=>{
 
 
 
-// Scroll reveal animation
+// Scroll animation
 
-const revealItems = document.querySelectorAll(
-"section, .product, .features div, .steps div, .review-card"
+const animatedItems = document.querySelectorAll(
+"section, .product, .features div, .steps div"
 );
 
 
 
-revealItems.forEach(item=>{
+animatedItems.forEach(item=>{
 
     item.style.opacity="0";
 
-    item.style.transform="translateY(40px)";
+    item.style.transform="translateY(35px)";
 
-    item.style.transition="all .8s ease";
+    item.style.transition="all .7s ease";
 
 });
 
@@ -81,28 +77,26 @@ revealItems.forEach(item=>{
 
 
 
-function revealOnScroll(){
+function reveal(){
 
 
-revealItems.forEach(item=>{
+animatedItems.forEach(item=>{
 
 
-let position =
+const position =
 item.getBoundingClientRect().top;
 
 
-let screen =
+const screen =
 window.innerHeight;
 
 
 
-if(position < screen - 100){
-
+if(position < screen - 80){
 
 item.style.opacity="1";
 
 item.style.transform="translateY(0)";
-
 
 }
 
@@ -117,28 +111,32 @@ item.style.transform="translateY(0)";
 
 window.addEventListener(
 "scroll",
-revealOnScroll
+reveal
 );
 
 
-
-revealOnScroll();
-
+reveal();
 
 
 
 
-// Current year automatically updates footer
-
-let year = new Date().getFullYear();
 
 
-let footerText = document.querySelector("footer p:last-child");
+
+// Update footer year automatically
+
+const year =
+new Date().getFullYear();
 
 
-if(footerText){
+const footer =
+document.querySelector("footer p:last-child");
 
-footerText.innerHTML =
+
+
+if(footer){
+
+footer.textContent =
 "© " + year + " Magna Pastries";
 
 }
