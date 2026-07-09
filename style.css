@@ -1,68 +1,99 @@
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',Arial,sans-serif;
 }
 
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 
 body{
-
-    background:#fff8ef;
-    color:#3a2115;
-
+background:#fff8f1;
+color:#3b2115;
 }
 
 
 
 header{
 
-    position:fixed;
-    top:0;
-    width:100%;
-    padding:20px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgba(255,248,239,.95);
-    backdrop-filter:blur(10px);
-    z-index:1000;
-    box-shadow:0 5px 20px rgba(0,0,0,.1);
+position:fixed;
+top:0;
+width:100%;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,248,241,.95);
+backdrop-filter:blur(12px);
+z-index:1000;
+box-shadow:0 5px 25px rgba(0,0,0,.08);
 
 }
+
 
 
 
 .logo{
 
-    font-size:28px;
-    font-weight:bold;
-    color:#8b4513;
+display:flex;
+align-items:center;
+gap:12px;
 
 }
+
+
+.logo-icon{
+
+width:45px;
+height:45px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:#b77b3c;
+color:white;
+font-size:25px;
+font-weight:bold;
+
+}
+
+
+.logo h3{
+
+color:#8b4513;
+font-size:22px;
+
+}
+
+
+.logo p{
+
+font-size:12px;
+letter-spacing:3px;
+
+}
+
 
 
 
 nav a{
 
-    text-decoration:none;
-    color:#3a2115;
-    margin-left:25px;
-    font-weight:bold;
-    transition:.3s;
+text-decoration:none;
+color:#3b2115;
+margin-left:25px;
+font-weight:600;
+transition:.3s;
 
 }
 
 
-
 nav a:hover{
 
-    color:#d4a574;
+color:#b77b3c;
 
 }
 
@@ -70,9 +101,9 @@ nav a:hover{
 
 .menu-icon{
 
-    display:none;
-    font-size:30px;
-    cursor:pointer;
+display:none;
+font-size:30px;
+cursor:pointer;
 
 }
 
@@ -80,8 +111,8 @@ nav a:hover{
 
 
 
-.hero{
 
+.hero{
 
 height:100vh;
 
@@ -93,6 +124,7 @@ rgba(0,0,0,.45)
 ),
 
 url("https://images.unsplash.com/photo-1555507036-ab1f4038808a")
+
 center/cover;
 
 
@@ -101,16 +133,23 @@ align-items:center;
 padding:0 10%;
 color:white;
 
-
 }
 
 
 
 .hero-content{
 
-max-width:700px;
+max-width:750px;
+animation:appear 1.2s;
 
-animation:fade .9s ease;
+}
+
+
+
+.small-title{
+
+letter-spacing:4px;
+font-size:14px;
 
 }
 
@@ -118,8 +157,9 @@ animation:fade .9s ease;
 
 .hero h1{
 
-font-size:60px;
-line-height:1.2;
+font-size:65px;
+line-height:1.1;
+margin:20px 0;
 
 }
 
@@ -127,8 +167,8 @@ line-height:1.2;
 
 .hero p{
 
-font-size:22px;
-margin:25px 0;
+font-size:21px;
+line-height:1.7;
 
 }
 
@@ -139,21 +179,19 @@ margin:25px 0;
 button,
 .second-btn{
 
-
-background:#d4a574;
-color:white;
-border:none;
+display:inline-block;
+margin-top:25px;
 padding:15px 35px;
 border-radius:40px;
+border:none;
+background:#b77b3c;
+color:white;
 font-size:17px;
 cursor:pointer;
 text-decoration:none;
-display:inline-block;
-transition:.3s;
-
+transition:.4s;
 
 }
-
 
 
 button:hover,
@@ -163,6 +201,7 @@ background:#8b4513;
 transform:translateY(-5px);
 
 }
+
 
 
 
@@ -179,7 +218,7 @@ text-align:center;
 
 section h2{
 
-font-size:40px;
+font-size:42px;
 color:#8b4513;
 margin-bottom:30px;
 
@@ -200,14 +239,13 @@ line-height:1.8;
 
 .stats{
 
-background:#3a2115;
-color:white;
 display:flex;
 justify-content:center;
 gap:70px;
+background:#3b2115;
+color:white;
 
 }
-
 
 
 .stats h3{
@@ -216,6 +254,7 @@ font-size:45px;
 color:#d4a574;
 
 }
+
 
 
 
@@ -237,8 +276,8 @@ background:white;
 width:320px;
 border-radius:25px;
 overflow:hidden;
-padding-bottom:25px;
 box-shadow:0 15px 35px rgba(0,0,0,.12);
+padding-bottom:25px;
 transition:.4s;
 
 }
@@ -274,9 +313,83 @@ font-size:25px;
 
 .product p{
 
-padding:0 20px 20px;
+padding:0 20px;
 
 }
+
+
+
+
+
+
+.features,
+.steps{
+
+display:flex;
+justify-content:center;
+gap:25px;
+flex-wrap:wrap;
+
+}
+
+
+
+.features div,
+.steps div{
+
+background:white;
+padding:30px;
+width:250px;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+
+}
+
+
+
+
+.steps span{
+
+display:inline-flex;
+width:50px;
+height:50px;
+border-radius:50%;
+background:#b77b3c;
+color:white;
+align-items:center;
+justify-content:center;
+font-size:22px;
+
+}
+
+
+
+
+
+
+
+.offer{
+
+background:#f3ddc2;
+
+}
+
+
+
+
+
+
+.review-card{
+
+background:white;
+padding:40px;
+border-radius:25px;
+max-width:600px;
+margin:auto;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+
+}
+
 
 
 
@@ -285,12 +398,11 @@ padding:0 20px 20px;
 .gallery{
 
 display:flex;
-gap:25px;
 justify-content:center;
+gap:25px;
 flex-wrap:wrap;
 
 }
-
 
 
 .gallery img{
@@ -304,12 +416,30 @@ transition:.4s;
 }
 
 
-
 .gallery img:hover{
 
 transform:scale(1.05);
 
 }
+
+
+
+
+
+
+.social a{
+
+display:inline-block;
+margin:15px;
+padding:12px 25px;
+background:#3b2115;
+color:white;
+border-radius:30px;
+text-decoration:none;
+
+}
+
+
 
 
 
@@ -321,12 +451,12 @@ right:25px;
 bottom:25px;
 width:60px;
 height:60px;
-background:#25D366;
-color:white;
 border-radius:50%;
+background:#25D366;
 display:flex;
 align-items:center;
 justify-content:center;
+color:white;
 font-size:30px;
 cursor:pointer;
 z-index:999;
@@ -337,12 +467,13 @@ z-index:999;
 
 
 
+
 footer{
 
-background:#3a2115;
+background:#3b2115;
 color:white;
-text-align:center;
 padding:40px;
+text-align:center;
 
 }
 
@@ -350,7 +481,9 @@ padding:40px;
 
 
 
-@keyframes fade{
+
+
+@keyframes appear{
 
 from{
 
@@ -372,8 +505,9 @@ transform:translateY(0);
 
 
 
-@media(max-width:768px){
 
+
+@media(max-width:768px){
 
 
 header{
@@ -383,7 +517,6 @@ padding:20px 5%;
 }
 
 
-
 .menu-icon{
 
 display:block;
@@ -391,19 +524,17 @@ display:block;
 }
 
 
-
 nav{
 
 display:none;
 position:absolute;
-top:75px;
+top:80px;
 left:0;
 width:100%;
-background:#fff8ef;
-padding:20px;
+background:#fff8f1;
+padding:25px;
 
 }
-
 
 
 nav.active{
@@ -430,7 +561,6 @@ font-size:40px;
 }
 
 
-
 .hero p{
 
 font-size:18px;
@@ -442,13 +572,14 @@ font-size:18px;
 .stats{
 
 flex-direction:column;
-gap:30px;
+gap:25px;
 
 }
 
 
-
-.products{
+.products,
+.features,
+.steps{
 
 flex-direction:column;
 align-items:center;
@@ -457,7 +588,9 @@ align-items:center;
 
 
 
-.product{
+.product,
+.features div,
+.steps div{
 
 width:90%;
 
@@ -472,4 +605,5 @@ width:90%;
 }
 
 
-}
+
+    }
