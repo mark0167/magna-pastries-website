@@ -13,8 +13,8 @@ scroll-behavior:smooth;
 
 body{
 
-background:#fff8f0;
-color:#3b2416;
+background:#fff8f1;
+color:#3b2418;
 
 }
 
@@ -24,19 +24,23 @@ color:#3b2416;
 header{
 
 position:fixed;
+
 top:0;
 left:0;
+
 width:100%;
 
 padding:18px 8%;
 
 display:flex;
+
 justify-content:space-between;
+
 align-items:center;
 
-background:rgba(255,248,240,.92);
+background:rgba(255,248,241,.94);
 
-backdrop-filter:blur(10px);
+backdrop-filter:blur(12px);
 
 z-index:1000;
 
@@ -44,25 +48,27 @@ z-index:1000;
 
 
 
-
-
 .logo{
 
 display:flex;
+
 align-items:center;
+
 gap:12px;
 
 }
 
 
+
 .logo-circle{
 
-width:45px;
-height:45px;
+width:46px;
+
+height:46px;
 
 border-radius:50%;
 
-background:#a96b37;
+background:#a66b3d;
 
 color:white;
 
@@ -82,9 +88,9 @@ font-weight:bold;
 
 .logo h3{
 
-color:#7b421f;
-
 font-size:23px;
+
+color:#7a4323;
 
 }
 
@@ -92,11 +98,12 @@ font-size:23px;
 
 .logo span{
 
-font-size:12px;
+font-size:11px;
 
-letter-spacing:3px;
+letter-spacing:4px;
 
 }
+
 
 
 
@@ -105,7 +112,7 @@ nav a{
 
 text-decoration:none;
 
-color:#3b2416;
+color:#3b2418;
 
 margin-left:25px;
 
@@ -118,9 +125,10 @@ transition:.3s;
 
 nav a:hover{
 
-color:#a96b37;
+color:#a66b3d;
 
 }
+
 
 
 
@@ -140,32 +148,23 @@ cursor:pointer;
 
 
 
-
 .hero{
 
-
-height:90vh;
-
+height:92vh;
 
 display:flex;
 
 align-items:center;
-
 
 padding:0 10%;
 
 
 background:
 
-
 linear-gradient(
-
 rgba(0,0,0,.45),
-
 rgba(0,0,0,.45)
-
 ),
-
 
 url("https://images.unsplash.com/photo-1555507036-ab1f4038808a")
 
@@ -187,6 +186,7 @@ max-width:650px;
 
 
 
+
 .badge{
 
 display:inline-block;
@@ -205,9 +205,10 @@ letter-spacing:2px;
 
 
 
+
 .hero h1{
 
-font-size:52px;
+font-size:50px;
 
 line-height:1.15;
 
@@ -229,15 +230,13 @@ line-height:1.7;
 
 
 
-
-
 button,
 .outline-btn{
 
 
 padding:14px 32px;
 
-border-radius:35px;
+border-radius:40px;
 
 border:none;
 
@@ -260,7 +259,7 @@ transition:.3s;
 
 button{
 
-background:#a96b37;
+background:#a66b3d;
 
 color:white;
 
@@ -280,16 +279,13 @@ margin-left:10px;
 
 
 
+
 button:hover,
 .outline-btn:hover{
 
 transform:translateY(-4px);
 
-opacity:.85;
-
 }
-
-
 
 
 
@@ -297,7 +293,7 @@ opacity:.85;
 
 section{
 
-padding:80px 10%;
+padding:85px 10%;
 
 text-align:center;
 
@@ -305,17 +301,25 @@ text-align:center;
 
 
 
-
 section h2{
 
 font-size:36px;
 
-color:#7b421f;
+color:#7a4323;
 
-margin-bottom:35px;
+margin-bottom:30px;
 
 }
 
+
+
+section p{
+
+font-size:18px;
+
+line-height:1.8;
+
+}
 
 
 
@@ -338,12 +342,11 @@ flex-wrap:wrap;
 
 .card{
 
+background:white;
 
 width:320px;
 
-background:white;
-
-border-radius:22px;
+border-radius:25px;
 
 overflow:hidden;
 
@@ -352,7 +355,6 @@ box-shadow:0 12px 30px rgba(0,0,0,.08);
 padding-bottom:25px;
 
 transition:.4s;
-
 
 }
 
@@ -366,11 +368,12 @@ transform:translateY(-10px);
 
 
 
+
 .card img{
 
 width:100%;
 
-height:220px;
+height:230px;
 
 object-fit:cover;
 
@@ -382,9 +385,9 @@ object-fit:cover;
 
 font-size:24px;
 
-margin:20px 0 10px;
+color:#7a4323;
 
-color:#7b421f;
+margin:20px;
 
 }
 
@@ -394,10 +397,7 @@ color:#7b421f;
 
 padding:0 20px;
 
-line-height:1.7;
-
 }
-
 
 
 
@@ -426,7 +426,7 @@ width:250px;
 
 padding:30px;
 
-border-radius:20px;
+border-radius:22px;
 
 box-shadow:0 10px 25px rgba(0,0,0,.08);
 
@@ -434,15 +434,13 @@ box-shadow:0 10px 25px rgba(0,0,0,.08);
 
 
 
-
 .why h3{
 
-color:#a96b37;
+color:#a66b3d;
 
 margin-bottom:15px;
 
 }
-
 
 
 
@@ -469,10 +467,9 @@ height:230px;
 
 object-fit:cover;
 
-border-radius:22px;
+border-radius:25px;
 
 }
-
 
 
 
@@ -481,20 +478,19 @@ border-radius:22px;
 
 display:inline-block;
 
-margin:15px;
-
-padding:14px 30px;
-
-border-radius:35px;
-
-background:#7b421f;
+background:#7a4323;
 
 color:white;
 
 text-decoration:none;
 
-}
+padding:14px 30px;
 
+border-radius:35px;
+
+margin:15px;
+
+}
 
 
 
@@ -528,6 +524,8 @@ justify-content:center;
 
 cursor:pointer;
 
+z-index:999;
+
 }
 
 
@@ -536,13 +534,22 @@ cursor:pointer;
 
 footer{
 
-background:#3b2416;
+background:#3b2418;
 
 color:white;
 
-padding:35px;
-
 text-align:center;
+
+padding:40px;
+
+}
+
+
+footer p:last-child{
+
+font-size:13px;
+
+opacity:.7;
 
 }
 
@@ -551,8 +558,8 @@ text-align:center;
 
 
 
-@media(max-width:768px){
 
+@media(max-width:768px){
 
 
 header{
@@ -583,7 +590,7 @@ left:0;
 
 width:100%;
 
-background:#fff8f0;
+background:#fff8f1;
 
 padding:20px;
 
@@ -609,9 +616,10 @@ margin:15px;
 
 
 
+
 .hero h1{
 
-font-size:38px;
+font-size:36px;
 
 }
 
@@ -625,6 +633,7 @@ font-size:17px;
 
 
 
+
 section{
 
 padding:65px 6%;
@@ -633,11 +642,13 @@ padding:65px 6%;
 
 
 
+
 section h2{
 
 font-size:30px;
 
 }
+
 
 
 
@@ -668,4 +679,4 @@ margin-left:0;
 }
 
 
-  }
+}
