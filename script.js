@@ -1,71 +1,86 @@
-// Magna Pastries Website Interactions
+// Magna Pastries Website JavaScript
 
 
-// WhatsApp Order Button
+// WhatsApp Order Function
 
 function orderNow(){
 
-    let phoneNumber = "251900000000";
+    let phone = "251900000000";
 
-    let message = "Hello Magna Pastries! I would like to place an order.";
+    let message = 
+    "Hello Magna Pastries! I would like to order your delicious products.";
 
-    let whatsappURL = 
-    "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+    let url =
+    "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
 
 
-    window.open(whatsappURL, "_blank");
+    window.open(url, "_blank");
 
 }
 
 
 
-// Smooth navigation animation
+// Mobile Menu
 
-document.querySelectorAll("nav a").forEach(link => {
+function toggleMenu(){
 
-    link.addEventListener("click", function(e){
+    let nav = document.getElementById("nav");
 
-        e.preventDefault();
+    nav.classList.toggle("active");
 
-        let section = document.querySelector(
-            this.getAttribute("href")
-        );
+}
 
 
-        section.scrollIntoView({
 
-            behavior:"smooth"
+// Close mobile menu after clicking a link
 
-        });
+document.querySelectorAll("nav a").forEach(link=>{
+
+
+    link.addEventListener("click",()=>{
+
+
+        document.getElementById("nav")
+        .classList.remove("active");
+
 
     });
+
 
 });
 
 
 
 
-// Reveal animation when scrolling
+// Scroll animation
 
-const cards = document.querySelectorAll(".card");
-
-
-window.addEventListener("scroll", ()=>{
-
-
-cards.forEach(card=>{
+const elements = document.querySelectorAll(
+"section, .product, .review"
+);
 
 
-let position = card.getBoundingClientRect().top;
 
-let screen = window.innerHeight;
+function reveal(){
+
+
+elements.forEach(element=>{
+
+
+let position =
+element.getBoundingClientRect().top;
+
+
+let screen =
+window.innerHeight;
+
 
 
 if(position < screen - 100){
 
-card.style.opacity="1";
+element.style.opacity="1";
 
-card.style.transform="translateY(0)";
+element.style.transform="translateY(0)";
+
 
 }
 
@@ -73,19 +88,27 @@ card.style.transform="translateY(0)";
 });
 
 
-});
+}
 
 
 
 
-// Initial card animation setup
+elements.forEach(element=>{
 
-cards.forEach(card=>{
+element.style.opacity="0";
 
-card.style.opacity="0";
+element.style.transform="translateY(40px)";
 
-card.style.transform="translateY(50px)";
-
-card.style.transition="0.6s";
+element.style.transition="0.8s";
 
 });
+
+
+
+window.addEventListener(
+"scroll",
+reveal
+);
+
+
+reveal();
