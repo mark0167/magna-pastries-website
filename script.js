@@ -1,34 +1,38 @@
-// Magna Pastries V3 Website Script
+// Magna Pastries V5 Script
 
 
-// WhatsApp Order
+// WhatsApp Order Button
 
 function orderNow(){
 
-    const phone = "251988678989";
-
-    const message =
-    "Hello Magna Pastries! I would like to place an order.";
-
-    const whatsapp =
-    "https://wa.me/" + phone +
-    "?text=" + encodeURIComponent(message);
+const phone = "251988678989";
 
 
-    window.open(whatsapp, "_blank");
+const message =
+"Hello Magna Pastries! I would like to order cakes, pastries or desserts.";
+
+
+const url =
+"https://wa.me/" + phone +
+"?text=" + encodeURIComponent(message);
+
+
+window.open(url,"_blank");
+
 
 }
 
 
 
 
-// Mobile Menu
+
+// Mobile Navigation
 
 function toggleMenu(){
 
-    const nav = document.getElementById("nav");
+const nav = document.getElementById("nav");
 
-    nav.classList.toggle("active");
+nav.classList.toggle("active");
 
 }
 
@@ -36,16 +40,20 @@ function toggleMenu(){
 
 
 
-// Close mobile menu after selecting a section
+// Close menu after clicking link
 
 document.querySelectorAll("nav a").forEach(link=>{
 
-    link.addEventListener("click",()=>{
 
-        document.getElementById("nav")
-        .classList.remove("active");
+link.addEventListener("click",()=>{
 
-    });
+
+document.getElementById("nav")
+.classList.remove("active");
+
+
+});
+
 
 });
 
@@ -55,21 +63,25 @@ document.querySelectorAll("nav a").forEach(link=>{
 
 
 
-// Scroll animation
+// Simple reveal animation
 
-const animatedItems = document.querySelectorAll(
-"section, .product, .features div, .steps div"
+
+const sections =
+document.querySelectorAll(
+"section, .card, .why div"
 );
 
 
 
-animatedItems.forEach(item=>{
+sections.forEach(item=>{
 
-    item.style.opacity="0";
 
-    item.style.transform="translateY(35px)";
+item.style.opacity="0";
 
-    item.style.transition="all .7s ease";
+item.style.transform="translateY(30px)";
+
+item.style.transition="all .7s ease";
+
 
 });
 
@@ -77,28 +89,26 @@ animatedItems.forEach(item=>{
 
 
 
-function reveal(){
+function showSections(){
 
 
-animatedItems.forEach(item=>{
+sections.forEach(item=>{
 
 
-const position =
+let position =
 item.getBoundingClientRect().top;
 
 
-const screen =
-window.innerHeight;
+if(position < window.innerHeight - 80){
 
-
-
-if(position < screen - 80){
 
 item.style.opacity="1";
 
 item.style.transform="translateY(0)";
 
+
 }
+
 
 
 });
@@ -108,14 +118,15 @@ item.style.transform="translateY(0)";
 
 
 
-
 window.addEventListener(
 "scroll",
-reveal
+showSections
 );
 
 
-reveal();
+
+showSections();
+
 
 
 
