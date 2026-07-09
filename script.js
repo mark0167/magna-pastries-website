@@ -1,85 +1,101 @@
-// Magna Pastries Website JavaScript
+// Magna Pastries Website Functions
 
 
-// WhatsApp Order Function
+// WhatsApp Order Button
 
 function orderNow(){
 
-    let phone = "251900000000";
+    let phone = "251988678989";
 
     let message = 
-    "Hello Magna Pastries! I would like to order your delicious products.";
+    "Hello Magna Pastries! I would like to order cakes or pastries.";
 
-    let url =
+    let whatsappLink =
     "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
 
 
-    window.open(url, "_blank");
+    window.open(whatsappLink, "_blank");
 
 }
 
 
 
-// Mobile Menu
+
+// Mobile Navigation Menu
 
 function toggleMenu(){
 
-    let nav = document.getElementById("nav");
+    let menu = document.getElementById("nav");
 
-    nav.classList.toggle("active");
+    menu.classList.toggle("active");
 
 }
 
 
 
-// Close mobile menu after clicking a link
 
-document.querySelectorAll("nav a").forEach(link=>{
+// Close menu after clicking a link
 
+let links = document.querySelectorAll("nav a");
+
+
+links.forEach(link=>{
 
     link.addEventListener("click",()=>{
-
 
         document.getElementById("nav")
         .classList.remove("active");
 
-
     });
 
-
 });
+
 
 
 
 
 // Scroll animation
 
-const elements = document.querySelectorAll(
-"section, .product, .review"
+let items = document.querySelectorAll(
+"section, .product"
 );
 
 
 
-function reveal(){
+items.forEach(item=>{
+
+    item.style.opacity="0";
+
+    item.style.transform="translateY(40px)";
+
+    item.style.transition="0.8s";
+
+});
 
 
-elements.forEach(element=>{
+
+
+
+function showAnimation(){
+
+
+items.forEach(item=>{
 
 
 let position =
-element.getBoundingClientRect().top;
+item.getBoundingClientRect().top;
 
 
-let screen =
+let height =
 window.innerHeight;
 
 
 
-if(position < screen - 100){
+if(position < height - 100){
 
-element.style.opacity="1";
+item.style.opacity="1";
 
-element.style.transform="translateY(0)";
+item.style.transform="translateY(0)";
 
 
 }
@@ -90,25 +106,13 @@ element.style.transform="translateY(0)";
 
 }
 
-
-
-
-elements.forEach(element=>{
-
-element.style.opacity="0";
-
-element.style.transform="translateY(40px)";
-
-element.style.transition="0.8s";
-
-});
 
 
 
 window.addEventListener(
 "scroll",
-reveal
+showAnimation
 );
 
 
-reveal();
+showAnimation();
