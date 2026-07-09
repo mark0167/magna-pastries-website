@@ -1,7 +1,7 @@
-// Magna Pastries V5 Script
+// Magna Pastries V6 Script
 
 
-// WhatsApp Order Button
+// WhatsApp Order Function
 
 function orderNow(){
 
@@ -12,12 +12,12 @@ const message =
 "Hello Magna Pastries! I would like to order cakes, pastries or desserts.";
 
 
-const url =
+const whatsappLink =
 "https://wa.me/" + phone +
 "?text=" + encodeURIComponent(message);
 
 
-window.open(url,"_blank");
+window.open(whatsappLink, "_blank");
 
 
 }
@@ -26,7 +26,7 @@ window.open(url,"_blank");
 
 
 
-// Mobile Navigation
+// Mobile Menu
 
 function toggleMenu(){
 
@@ -40,18 +40,16 @@ nav.classList.toggle("active");
 
 
 
-// Close menu after clicking link
+// Close menu after clicking navigation links
 
 document.querySelectorAll("nav a").forEach(link=>{
 
 
 link.addEventListener("click",()=>{
 
-
 document.getElementById("nav")
 .classList.remove("active");
 
-
 });
 
 
@@ -63,25 +61,22 @@ document.getElementById("nav")
 
 
 
-// Simple reveal animation
+// Smooth appearance animation
 
-
-const sections =
+const elements =
 document.querySelectorAll(
 "section, .card, .why div"
 );
 
 
 
-sections.forEach(item=>{
+elements.forEach(element=>{
 
+element.style.opacity="0";
 
-item.style.opacity="0";
+element.style.transform="translateY(35px)";
 
-item.style.transform="translateY(30px)";
-
-item.style.transition="all .7s ease";
-
+element.style.transition="all .8s ease";
 
 });
 
@@ -89,26 +84,25 @@ item.style.transition="all .7s ease";
 
 
 
-function showSections(){
+function revealElements(){
 
 
-sections.forEach(item=>{
+elements.forEach(element=>{
 
 
-let position =
-item.getBoundingClientRect().top;
+const position =
+element.getBoundingClientRect().top;
 
 
-if(position < window.innerHeight - 80){
+if(position < window.innerHeight - 100){
 
 
-item.style.opacity="1";
+element.style.opacity="1";
 
-item.style.transform="translateY(0)";
+element.style.transform="translateY(0)";
 
 
 }
-
 
 
 });
@@ -120,13 +114,11 @@ item.style.transform="translateY(0)";
 
 window.addEventListener(
 "scroll",
-showSections
+revealElements
 );
 
 
-
-showSections();
-
+revealElements();
 
 
 
@@ -134,14 +126,14 @@ showSections();
 
 
 
-// Update footer year automatically
+// Automatic copyright year
 
 const year =
 new Date().getFullYear();
 
 
 const footer =
-document.querySelector("footer p:last-child");
+document.querySelector("footer p:nth-child(3)");
 
 
 
