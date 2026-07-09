@@ -1,52 +1,55 @@
-// Magna Pastries Website Functions
+// Magna Pastries Final Website Script
 
 
-// WhatsApp Order Button
+// WhatsApp Order System
 
 function orderNow(){
 
     let phone = "251988678989";
 
     let message = 
-    "Hello Magna Pastries! I would like to order cakes or pastries.";
+    "Hello Magna Pastries! I would like to order cakes, pastries or desserts.";
 
-    let whatsappLink =
+    let link =
     "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
 
 
-    window.open(whatsappLink, "_blank");
+    window.open(link, "_blank");
 
 }
 
 
 
 
-// Mobile Navigation Menu
+
+// Mobile Menu
 
 function toggleMenu(){
 
-    let menu = document.getElementById("nav");
+    let nav = document.getElementById("nav");
 
-    menu.classList.toggle("active");
+    nav.classList.toggle("active");
 
 }
 
 
 
 
-// Close menu after clicking a link
 
-let links = document.querySelectorAll("nav a");
+// Close menu after selecting a page
+
+document.querySelectorAll("nav a").forEach(item=>{
 
 
-links.forEach(link=>{
+    item.addEventListener("click",()=>{
 
-    link.addEventListener("click",()=>{
 
         document.getElementById("nav")
         .classList.remove("active");
 
+
     });
+
 
 });
 
@@ -54,21 +57,23 @@ links.forEach(link=>{
 
 
 
-// Scroll animation
 
-let items = document.querySelectorAll(
-"section, .product"
+
+// Scroll reveal animation
+
+const revealItems = document.querySelectorAll(
+"section, .product, .features div, .steps div, .review-card"
 );
 
 
 
-items.forEach(item=>{
+revealItems.forEach(item=>{
 
     item.style.opacity="0";
 
     item.style.transform="translateY(40px)";
 
-    item.style.transition="0.8s";
+    item.style.transition="all .8s ease";
 
 });
 
@@ -76,22 +81,23 @@ items.forEach(item=>{
 
 
 
-function showAnimation(){
+function revealOnScroll(){
 
 
-items.forEach(item=>{
+revealItems.forEach(item=>{
 
 
 let position =
 item.getBoundingClientRect().top;
 
 
-let height =
+let screen =
 window.innerHeight;
 
 
 
-if(position < height - 100){
+if(position < screen - 100){
+
 
 item.style.opacity="1";
 
@@ -111,8 +117,28 @@ item.style.transform="translateY(0)";
 
 window.addEventListener(
 "scroll",
-showAnimation
+revealOnScroll
 );
 
 
-showAnimation();
+
+revealOnScroll();
+
+
+
+
+
+// Current year automatically updates footer
+
+let year = new Date().getFullYear();
+
+
+let footerText = document.querySelector("footer p:last-child");
+
+
+if(footerText){
+
+footerText.innerHTML =
+"© " + year + " Magna Pastries";
+
+}
